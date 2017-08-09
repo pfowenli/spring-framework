@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="greetings-a" class="com.springframework.example01.Messenger">
+		<property name="message" value="Hello! It's a great day." />
+	</bean>
+	
+	<bean id="greetings-b" class="com.springframework.example02.Messenger" scope="singleton">
+		<property name="message" value="Hi! It's an wonderful day." />
+	</bean>
+	
+	<bean id="greetings-c" class="com.springframework.example03.Messenger" scope="prototype">
+		<property name="message" value="Hey! It's a awesome day." />
+	</bean>
+	
+	<bean id="greetings-d" class="com.springframework.example04.Messenger" init-method = "init" 
+      destroy-method = "destroy">
+		<property name="message" value="Nice to meet you." />
+	</bean>
+	
+	<bean id="greetings-e" class="com.springframework.example05.Messenger" init-method = "init" 
+      destroy-method = "destroy">
+		<property name="message" value="Good to see you." />
+	</bean>
+	
+	<bean class="com.springframework.example05.InitMessenger"></bean>
+
+</beans>
